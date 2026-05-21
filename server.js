@@ -44,7 +44,7 @@ app.post('/resume', async (req, res) => {
   const page = pages[pages.length - 1];
   
   await page.goto('https://platform.openai.com/api-keys');
-  await page.waitForTimeout(3000);
+  await page.waitForTimeout(3580);
   
   // Extract API keys from page
   const keys = await page.evaluate(() => {
@@ -73,6 +73,6 @@ app.get('/keys', (req, res) => {
   res.json(extractedKeys);
 });
 
-app.listen(3000, () => {
-  console.log('API Collector Agent running on port 3000');
+app.listen(3580, () => {
+  console.log('API Collector Agent running on port 3580');
 });
